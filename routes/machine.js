@@ -1,0 +1,42 @@
+const router = new (require('restify-router')).Router();
+const Factory = require('../models/Factory')
+const Area = require('../models/Area')
+const Line = require('../models/Line')
+const Machine = require('../models/Machine')
+const Sparepart = require('../models/Sparepart')
+
+
+router.get('/', function (req, res, next) {
+	
+	//where
+	let where_statement = {};
+	if(req.query.id)
+		where_statement.id = req.query.id;
+	if(req.query.lineId)
+		where_statement.lineId = req.query.lineId;
+	
+	Machine.findAll({
+		where: where_statement,
+		include: [{ 
+			model: Line, attributes: ['id','name'], include: {
+				model: Area, attributes: ['id','name'], include: {
+					model: Factory, attributes: ['id','name'],
+				}
+			}
+		},
+		Sparepart
+		]
+	}).then(machines => {
+
+		res.json(machines);
+	});
+});
+
+router.post('/', function (req, res, next) {
+	let machine = req.body.machine;
+	Machine.create({ name: machine.name, line_id: machine.line_id}).then(machine => {
+		res.json(machine);
+	})
+});
+
+module.exports = router;

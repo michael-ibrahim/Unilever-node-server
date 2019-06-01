@@ -1,0 +1,136 @@
+factory,area,line,machine,sparepart,code,position
+General,DATCO,DATCO,DATCO,Bearing HK 2020,1000423329,C2A1A
+General,DATCO,DATCO,DATCO,Bearing _ NK 40/30,10295914,B3C3B
+General,DATCO,DATCO,DATCO,Bearing _G312,10295923,B3C3A
+General,DATCO,DATCO,DATCO,Datco_Bearing 626 -2RSH-C3,1000430727,C2A1B
+Powder,Make,Section 62,62P1,P.M_HPP_Gasket_O-ring-3500-NBR-Pos-117,10223244,D2A4B
+Powder,Make,Section 62,62P1,P.M_HPP_Gasket_O-ring-4425-Pos-108,10222996,D2A4A
+Powder,Make,Section 62,62P1,"P.M_SteamTrap3/4""",1000420420,D1A3A
+Powder,Make,Section 62,62P1,P.M_TaperBushing,1000429866,D1A3C
+Powder,Make,Section 63,High Pressure Pump,Bursting Discs -sfaz-bi-316s.s,10296674,A3C1A
+Powder,Make,Section 63,High Pressure Pump,P.M_Module_Input1794-IE8,10296675,A3C1D
+Powder,Make,Section 63,High Pressure Pump,"Safety Valve 1/2""-s10",10296678,A3C1E
+Powder,Make,Section 63,High Pressure Pump,Temperature ControllerQD 11,1000421476,B2A4B
+Powder,Pack,Line 2,Bosch,P.F_Bosch_DustExtraction,10223168,E2B2B
+Powder,Pack,Line 2,Bosch,P.F_Bosch_VacuumAccessories_8101953664,10223172,E2B2A
+Powder,Pack,Line 2,Pada,Ball Valve,10297562,E1D7A
+Powder,Pack,Line 2,Pada,CheckWeigherShaft19x12x40x52x23x15x40x25,10280187,E1D2E
+Powder,Pack,Line 2,Pada,Cheque Wear _Timing Belt T5-560-18MM,10251622,E1B7F
+Powder,Pack,Line 2,Pada,Gearbox_20181106_I/20_Flange-63B14,10295322,E1A3E
+Powder,Pack,Line 2,Pada,Magnetic Guard 4002278925,10297759,E1A7F
+Powder,Pack,Line 2,Pada,Magnetic Guard Switch 4002210049,10297758,E1A7E
+Powder,Pack,Line 2,Pada,Motor Circuit BreakerGV2-380V_140A-C2A,10251422,E1A7A
+Powder,Pack,Line 2,Pada,O.P_Power supply _SDR-120-24V-DC-5A,10162504,E1A7C
+Powder,Pack,Line 2,Pada,Over Load 3RU2126-1DB0_SIEMENS,10263830,E1A8A
+Powder,Pack,Line 2,Pada,P.F_Analog Output _EL4002,10263833,E1A8D
+Powder,Pack,Line 2,Pada,P.F_Bus End Terminol_EL9010,10263837,E1A8H
+Powder,Pack,Line 2,Pada,P.F_Channel Analog Input_EL3204,10263835,E1A8F
+Powder,Pack,Line 2,Pada,P.F_Digital Output-24 DC/0.5A_EL2008,10263832,E1A8C
+Powder,Pack,Line 2,Pada,P.F_Digital Output-24 DC_EL1012,10263834,E1A8E
+Powder,Pack,Line 2,Pada,P.F_PadaProximityNBBO-8-5gm25e2v3-120377,10224981,E1A4B
+Powder,Pack,Line 2,Pada,P.F_PadaSolletape belt-Guide 185CMX8.5CM,10297716,E1B7E
+Powder,Pack,Line 2,Pada,P.F_Pada_ Bag cleanlineing Roller,10222976,E1D4A
+Powder,Pack,Line 2,Pada,P.F_Pada_ Cylinder DSNU 25-25,10222974,E1D3B
+Powder,Pack,Line 2,Pada,P.F_Pada_ Proximity I12000759_SI12SM-BE4,10230839,E1A7E
+Powder,Pack,Line 2,Pada,P.F_Pada_ Solinoid Nordson_1069207-24V D,10230842,E1A7D
+Powder,Pack,Line 2,Pada,P.F_Pada_ motor_inverters_ATV32H075M2,10222978,E1A6A
+Powder,Pack,Line 2,Pada,"P.F_Pada_10""touch_screen_HM1GX05502",10222984,E1A2A
+Powder,Pack,Line 2,Pada,P.F_Pada_Adjusting Wheel ?200mm,10222972,E1D6A
+Powder,Pack,Line 2,Pada,P.F_Pada_Aluminum-Right Arm,10226229,E1D6F
+Powder,Pack,Line 2,Pada,P.F_Pada_BOX Holder 30x30mmm,10224994,E1B6C
+Powder,Pack,Line 2,Pada,P.F_Pada_BOX Holder 50x45mm,10224995,E1B6D
+Powder,Pack,Line 2,Pada,P.F_Pada_Bearing 6206-2Z/C3,10224993,E1B6B
+Powder,Pack,Line 2,Pada,P.F_Pada_Cable Plashe Clips,10224996,E1A4D
+Powder,Pack,Line 2,Pada,"P.F_Pada_Chain Link 1""x25cm",10222975,E1C3A
+Powder,Pack,Line 2,Pada,"P.F_Pada_Chain Lock 1.5""",10222967,E1C3B
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 10A,10224986,E1A6B
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 16A,10224987,E1A6C
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 20A,10224988,E1A6D
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 25A,10224989,E1A6F
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 2A,10224983,E1A5C
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 4A,10224984,E1A5D
+Powder,Pack,Line 2,Pada,P.F_Pada_Circuit Braker Single 6A,10224985,E1A5E
+Powder,Pack,Line 2,Pada,P.F_Pada_Conveyor guide,10222977,E1B2A
+Powder,Pack,Line 2,Pada,P.F_Pada_Cylinder DSNU 25-125-PPVA,10224976,E1D3A
+Powder,Pack,Line 2,Pada,"P.F_Pada_Hengs 2""",10224973,E1C5B
+Powder,Pack,Line 2,Pada,P.F_Pada_Linear_Bearing LME40UU,10224992,E1B5B
+Powder,Pack,Line 2,Pada,P.F_Pada_Main Drive Shaft 750mm,10222970,E1B3A
+Powder,Pack,Line 2,Pada,P.F_Pada_Main Drive Shaft 850mm,10224990,E1B3B
+Powder,Pack,Line 2,Pada,P.F_Pada_Nordson_Glue-Nozzle_322016,10226217,E1B7B
+Powder,Pack,Line 2,Pada,P.F_Pada_O-Ring 2mmx40mm,10224971,E1C3D
+Powder,Pack,Line 2,Pada,P.F_Pada_Oring Belt _5mmx199cm,10257853,E1C8A
+Powder,Pack,Line 2,Pada,P.F_Pada_Oring Belt _6MMX1600MM,10251626,E1C7A
+Powder,Pack,Line 2,Pada,P.F_Pada_Piston _N1200-600_Size 62CM,10230841,E1D4F
+Powder,Pack,Line 2,Pada,P.F_Pada_Piston _N700,10277552,E1D3F
+Powder,Pack,Line 2,Pada,P.F_Pada_Proximity SwitchIME08-02BPOZTOS,10222986,E1A5A
+Powder,Pack,Line 2,Pada,P.F_Pada_ProximityIME08-02BPOZTOK1040873,10224982,E1A4C
+Powder,Pack,Line 2,Pada,P.F_Pada_S.S Bracket m10,10222981,E1D5C
+Powder,Pack,Line 2,Pada,P.F_Pada_S.S Bracket m6,10222961,E1D4E
+Powder,Pack,Line 2,Pada,P.F_Pada_S.S Bracket m8,10222960,E1D4D
+Powder,Pack,Line 2,Pada,P.F_Pada_S.S Cover,10224972,E1C5A
+Powder,Pack,Line 2,Pada,P.F_Pada_S.S Nipple 1/8,10224975,E1D2D
+Powder,Pack,Line 2,Pada,P.F_Pada_Sensor_SME-8M-D5-24V-K-0.3-M8D,10249997,E1A5F
+Powder,Pack,Line 2,Pada,P.F_Pada_Shaft 133x20,10222973,E1D3F
+Powder,Pack,Line 2,Pada,P.F_Pada_Solinoid ValveMHE4-M1H-3/5G-1/4,10230777,E1B7C
+Powder,Pack,Line 2,Pada,P.F_Pada_Solletape belt-Guide 138CMX7CM,10219002,E1E6B
+Powder,Pack,Line 2,Pada,P.F_Pada_Solletape belt-Guide 502CMX24CM,10230843,E1E7A
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 30x3/4""",10224964,E1C1B
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 30x3/4"" Sleeve",10224967,E1C2D
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 32X1/2"" Bearing",10224966,E1C1D
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 32x1/2""",10224963,E1C1A
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 40X3/4"" Bearing",10224970,E1C2C
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 40x3/4"" Sleeve",10224969,E1C2B
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 45x1/2""",10224965,E1C1C
+Powder,Pack,Line 2,Pada,"P.F_Pada_Spracket 45x1/2"" Sleeve",10224968,E1C2A
+Powder,Pack,Line 2,Pada,P.F_Pada_Stud Bolt 10mmx250mm,10224979,E1D4B
+Powder,Pack,Line 2,Pada,P.F_Pada_Suction Cup ?34mm,10224277,E1D2A
+Powder,Pack,Line 2,Pada,P.F_Pada_Taper Bushing 30mm,10222971,E1C6A
+Powder,Pack,Line 2,Pada,P.F_Pada_V BELT Pulley 125x3,10222962,E1D5A
+Powder,Pack,Line 2,Pada,"P.F_Pada_Vacum Generator 1/2""",10222963,E1D3E
+Powder,Pack,Line 2,Pada,P.F_Pada_bearing_6009-2Z/C3,10222979,E1B5C
+Powder,Pack,Line 2,Pada,P.F_Pada_box_pusher chain_CRA1BS50TF-90Z,10222958,E1C4A
+Powder,Pack,Line 2,Pada,"P.F_Pada_chain 1/2""""",10222968,E1C3C
+Powder,Pack,Line 2,Pada,P.F_Pada_convoyer Guide 430mm,10224991,E1B1A
+Powder,Pack,Line 2,Pada,P.F_Pada_electric_main_switch_LP1K060BD,10222990,E1A3D
+Powder,Pack,Line 2,Pada,P.F_Pada_linear_bearing LME30UU,10222980,E1B5A
+Powder,Pack,Line 2,Pada,P.F_Pada_motor&gear box_0.75KW,10222985,E1A1A
+Powder,Pack,Line 2,Pada,P.F_Pada_pusher-500MM Stroek,10222965,E1B4A
+Powder,Pack,Line 2,Pada,P.F_Pada_pusher-Plate 125mm,10222969,E1B6A
+Powder,Pack,Line 2,Pada,P.F_Pada_schneider_fuses? Glass 2A,10222988,E1A3B
+Powder,Pack,Line 2,Pada,P.F_Pada_sensor Festo SDE5-D10-O2-Q6EPM8,10230776,E1B7B
+Powder,Pack,Line 2,Pada,P.F_Pada_servomotor_BMH1001P16A2A,10222982,E1A4A
+Powder,Pack,Line 2,Pada,P.F_Pada_servomotor_drive_LXM32AD18M2,10222983,E1A3A
+Powder,Pack,Line 2,Pada,P.F_Padadoorsafetysensors_RE13-5AC-SICK,10222987,E1A5B
+Powder,Pack,Line 2,Pada,P.F_Padaelectric_cabinet_contactors_VCF4,10222989,E1A3C
+Powder,Pack,Line 2,Pada,P.F_Power Supply-EL9410-UINT Termibal,10263831,E1A8B
+Powder,Pack,Line 2,Pada,P.F_SolinoidValve-VMPA14-M1H-M-PI_573718,10224978,E1D3D
+Powder,Pack,Line 2,Pada,P.F_Valtage Supply Terminol24v DC_EL9110,10263836,E1A8G
+Powder,Pack,Line 2,Pada,P.M_HPP_63 F1_Controller Pulse GC12P,10230845,E1A7H
+Powder,Pack,Line 2,Pada,P.M_HPP_Taper Bush 2517-48_RCB,10251624,E1C6C
+Powder,Pack,Line 2,Pada,P.M_Oring Belt 350mmx7mm(7mmx115cm),10220889,E1D5D
+Powder,Pack,Line 2,Pada,PADA_Busher Chain???????,10261636,E1B4D
+Soap,Pack,Line 11,ACMA 771,555-4091S56  Crimp Jaw(top),1000425959,F2A4A
+Soap,Pack,Line 11,ACMA 771,A11_PLATE_0SX19,10186736,J2C5B
+Soap,Pack,Line 11,ACMA 771,A11_PLATE_0SX21,10186737,J2C5A
+Soap,Pack,Line 11,ACMA 771,AIR_Cylinder DNC-40-60-PPV-A(163355)-12b,1000427259,E3E4B
+Soap,Pack,Line 11,ACMA 771,Timing Belt 8 MM P 250T20W,1000425871,F1B5A
+Soap,Pack,Line 11,ACMA 771,Timing Belt TP1800 8M,1000425872,F1B5B
+Soap,Pack,Line 11,ACMA 771,filter 1/4 in welding WAH 032S,1000426090,E3E4A
+Soap,Pack,Line 11,Pester,Con_Conveyor belt112CMX26CMX1.3MM-151835,10131387,J1E3C
+Soap,Pack,Line 11,Pester,belt_312CMX26CMX1.3MM_151831,10134157,J1E3D
+Soap,Pack,Line 11,Stamper,KNIFE LOCKING NUT WASHER_0223958520/00,10219196,I1B1E
+Soap,Pack,Line 11,Stamper,KNIFE LOCKING NUT_0333952050/00,10219195,I1B1D
+Soap,Pack,Line 11,Stamper,OIL_Oil Seal_32X22x7mm,1000420599,L2B1A
+Soap,Pack,Line 11,Stamper,OIL_Oil Seal_38X28x7mm,1000420604,L2B1G
+Soap,Pack,Line 12,ACMA 7350,BAND_0VU381_ACMA 7350,10190144,I2B3F
+Soap,Pack,Line 12,ACMA 7350,Coupling GF14_90MM-6 finger,1000432201,H2C3C
+Soap,Pack,Line 12,ACMA 7350,Heater300mmx7.9mm-110v-440w,1000427053,G2B2A
+Soap,Pack,Line 12,ACMA 7350,Modell Omron H8PS cam Positiooner24vdc,10103666,G2B2B
+Soap,Pack,Line 12,ACMA 7350,Rubber Coupling 125mm-6 finger,1000427355,H2C3B
+Soap,Pack,Line 12,ACMA 7350,Thermocouple Type (K)-5CM-2MM-With cable,10126142,G1B1B
+Soap,Pack,Line 12,ACMA 7350,Timing Belt 32T5-750-150teeth,1000430980,I2B3A
+Soap,Pack,Line 12,Pester,Conv_Green Convayor Belt 1205cmx50cmx3mm,1000426232,H1A1B
+Soap,Pack,Line 12,Pester,Conv_White Belt _335CMx45cm Stamper LN1,1000426660,H1A1A
+Soap,Pack,Line 12,Pester,Flit Gear 12 * 122 * 25mm 80 Teeth,1000425960,F2A4B
+Soap,Pack,Line 12,Pester,ProximitySensorIME1204NPPZC0K-BES516-131,10132426,G1B1A
+Soap,Pack,Line 12,Pester,Taper Bush 1108x20mm R.GAll Lines,1000426637,F2A4C
