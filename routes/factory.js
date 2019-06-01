@@ -25,8 +25,36 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
 	let factory = req.body.factory;
-	Factory.create({ name: factory.name}).then(factory => {
-		res.json(factory);
+	Factory.create({ name: factory.name}).then(factory_ => {
+		res.status(201);
+		res.json(factory_);
+	})
+});
+
+router.put('/:id', function (req, res, next) {
+	let factory = req.body.factory;
+	Factory.findByPk(req.params.id).then(factory_ => {
+		if(!factory_){
+			res.status(404);
+			res.end();
+			return;
+		}
+		factory_.update({ name: factory.name}).then( (factory_) => {
+			res.json(factory_);
+		})
+	})
+});
+
+router.del('/:id', function (req, res, next) {
+	Factory.findByPk(req.params.id).then(factory_ => {
+		if(!factory_){
+			res.status(404);
+			res.end();
+			return;
+		}
+		factory_.destroy().then( (factory_) => {
+			res.json(factory_);
+		})
 	})
 });
 
