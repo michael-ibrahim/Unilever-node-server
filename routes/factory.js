@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
 	let factory = req.body.factory;
-	Factory.create({ name: factory.name}).then(factory_ => {
+	Factory.create(factory).then(factory_ => {
 		res.status(201);
 		res.json(factory_);
 	})
@@ -39,7 +39,7 @@ router.put('/:id', function (req, res, next) {
 			res.end();
 			return;
 		}
-		factory_.update({ name: factory.name}).then( (factory_) => {
+		factory_.update(factory).then( (factory_) => {
 			res.json(factory_);
 		})
 	})

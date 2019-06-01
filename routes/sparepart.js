@@ -40,11 +40,14 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-router.post('/', function (req, res, next) {
-	let sparepart = req.body.sparepart;
-	Sparepart.create({ name: sparepart.name, machine_id: sparepart.machine_id}).then(sparepart => {
-		res.json(sparepart);
-	})
-});
+// router.post('/', function (req, res, next) {
+// 	let sparepart = req.body.sparepart;
+// 	Machine.findByPk(sparepart.machineId).then(machine => {
+// 		Sparepart.create(sparepart).then(sparepart_ => {
+// 			sparepart_.setMachines([machine]);
+// 			res.json(sparepart_);
+// 		})
+// 	});
+// });
 
 module.exports = router;

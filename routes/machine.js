@@ -7,17 +7,17 @@ const Sparepart = require('../models/Sparepart')
 
 
 router.get('/', function (req, res, next) {
-	
+
 	//where
 	let where_statement = {};
 	if(req.query.id)
 		where_statement.id = req.query.id;
 	if(req.query.lineId)
 		where_statement.lineId = req.query.lineId;
-	
+
 	Machine.findAll({
 		where: where_statement,
-		include: [{ 
+		include: [{
 			model: Line, attributes: ['id','name'], include: {
 				model: Area, attributes: ['id','name'], include: {
 					model: Factory, attributes: ['id','name'],
@@ -34,8 +34,35 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
 	let machine = req.body.machine;
-	Machine.create({ name: machine.name, line_id: machine.line_id}).then(machine => {
-		res.json(machine);
+	Machine.create(machine).then(machine_ => {
+		res.json(machine_);
+	})
+});
+
+router.put('/:id', function (req, res, next) {
+	let machine = req.body.machine;
+	Machine.findByPk(req.params.id).then(machine_ => {
+		if(!machine_){
+			res.status(404);
+			res.end();
+			return;
+		}
+		machine_.update(machine).then( (machine_) => {
+			res.json(machine_);
+		})
+	})
+});
+
+router.del('/:id', function (req, res, next) {
+	Machine.findByPk(req.params.id).then(machine_ => {
+		if(!machine_){
+			res.status(404);
+			res.end();
+			return;
+		}
+		machine_.destroy().then( (machine_) => {
+			res.json(machine_);
+		})
 	})
 });
 
