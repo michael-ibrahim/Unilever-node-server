@@ -35,19 +35,46 @@ router.get('/', function (req, res, next) {
 			}
 		}]
 	}).then(spareparts => {
-
 		res.json(spareparts);
 	});
 });
 
-// router.post('/', function (req, res, next) {
-// 	let sparepart = req.body.sparepart;
-// 	Machine.findByPk(sparepart.machineId).then(machine => {
-// 		Sparepart.create(sparepart).then(sparepart_ => {
-// 			sparepart_.setMachines([machine]);
-// 			res.json(sparepart_);
-// 		})
-// 	});
-// });
+router.post('/', function (req, res, next) {
+	let sparepart = req.body.sparepart;
+	//Machine.findByPk(sparepart.machineId).then(machine => {
+		Sparepart.create(sparepart).then(sparepart_ => {
+			if(sparepart.machineIds) sparepart_.setMachines(sparepart.machineIds);
+			res.json(sparepart_);
+		})
+//	});
+});
+
+router.put('/:id', function (req, res, next) {
+	let sparepart = req.body.sparepart;
+	Sparepart.findByPk(req.params.id).then(sparepart_ => {
+		if(!sparepart_){
+			res.status(404);
+			res.end();
+			return;
+		}
+		sparepart_.update(sparepart).then( (sparepart_) => {
+			if(sparepart.machineIds) sparepart_.setMachines(sparepart.machineIds);
+			res.json(sparepart_);
+		})
+	})
+});
+
+router.del('/:id', function (req, res, next) {
+	Sparepart.findByPk(req.params.id).then(sparepart_ => {
+		if(!sparepart_){
+			res.status(404);
+			res.end();
+			return;
+		}
+		sparepart_.destroy().then( (sparepart_) => {
+			res.json(sparepart_);
+		})
+	})
+});
 
 module.exports = router;
