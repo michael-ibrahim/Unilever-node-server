@@ -66,4 +66,69 @@ router.del('/:id', function (req, res, next) {
 	})
 });
 
+// Machine.findByPk(req.params.id).then(machine_ => {
+// 	if(!machine_){
+// 		res.status(404);
+// 		res.end();
+// 		return;
+// 	}
+// 	else{
+//
+// 	}
+// })
+
+function ParseCSVFromBase64(base64,cb){
+	let str= Buffer.from(base64, 'base64').toString();
+	const csv=require('csvtojson')
+	csv()
+	.fromString(str)
+	.then((json)=>{
+		return cb(json);
+	})
+}
+
+router.post('/bulk-add/:id', function(req,res,next){
+	Machine.findByPk(req.params.id).then(machine_ => {
+		if(!machine_){
+			res.status(404);
+			res.end();
+			return;
+		}
+
+		else{
+			let fileBase64 = req.body.file.split(',').pop();
+			ParseCSVFromBase64(fileBase64,(spareparts)=>{
+
+				// Adding Spareparts to the database
+				Sparepart.bulkCreate(spareparts, { individualHooks: true }).then(spareparts_ => {
+
+					// Associating the Spareparts with the provided machine
+					for(let sparepart_ of spareparts_){
+						sparepart_.addMachine(machine_.id);
+					}
+
+					res.status(200);
+					res.end();
+				}, err=> {
+
+					//Handling Different Errors
+					let errorMsg;
+					switch(err.errors[0].type){
+						case "unique violation":
+							errorMsg = `${err.errors[0].path} '${err.errors[0].value}' already exists in the database.`;
+							res.status(409);
+							res.end(errorMsg);
+							return;
+						default:
+							errorMsg = "Could not process the provided data. Please, make sure it is valid.";
+							res.status(500);
+							res.end(errorMsg);
+							return;
+					}
+				});
+			});
+		}
+	});
+});
+
 module.exports = router;
