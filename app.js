@@ -27,6 +27,7 @@ const line = require('./routes/line');
 const machine = require('./routes/machine');
 const sparepart = require('./routes/sparepart');
 const transaction = require('./routes/transaction');
+const auth = require('./routes/auth');
 
 server.use(restify.plugins.throttle({
 	burst: 100,  	// Max 10 concurrent requests (if tokens)
@@ -38,12 +39,14 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.gzipResponse());
 
+
 router.add('/factory', factory);
 router.add('/area', area);
 router.add('/line', line);
 router.add('/machine', machine);
 router.add('/sparepart', sparepart);
 router.add('/transaction', transaction);
+router.add('/auth', auth);
 router.applyRoutes(server);
 
 server.on('after', restify.plugins.metrics({ server: server }, function onMetrics(err, metrics) {

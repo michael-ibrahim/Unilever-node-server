@@ -2,8 +2,9 @@ const router = new (require('restify-router')).Router();
 const Factory = require('../models/Factory')
 const Area = require('../models/Area')
 const Line = require('../models/Line')
+const Auth = require('../authentication');
 
-router.get('/', function (req, res, next) {
+router.get('/',function (req, res, next) {
 
 	//where
 	let where_statement = {};
