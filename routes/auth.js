@@ -4,9 +4,10 @@ const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
 const Auth = require("../authentication");
 
-router.get('/login', function (req, res, next) {
-	let email = req.headers.email;
-	let password = req.headers.password;
+router.post('/login', function (req, res, next) {
+	let email = req.body.email;
+	let password = req.body.password;
+
 	if( !(email && password) ){
 		res.status(400);
 		res.end();
@@ -21,7 +22,7 @@ router.get('/login', function (req, res, next) {
 			if(admin){
 				let JWT = Auth.getJWT(email);
 				res.status(200);
-				res.end(JWT);
+				res.json({token: JWT});
 			}
 			else{
 				res.status(401);

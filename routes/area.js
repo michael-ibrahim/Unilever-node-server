@@ -3,6 +3,7 @@ const Area = require('../models/Area')
 const Line = require('../models/Line')
 const Machine = require('../models/Machine')
 const Factory = require('../models/Factory')
+const Auth = require('../authentication');
 
 router.get('/', function (req, res, next) {
 
@@ -27,14 +28,14 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', Auth.validateAdmin,function (req, res, next) {
 	let area = req.body.area;
 	Area.create(area).then(area_ => {
 		res.json(area_);
 	})
 });
 
-router.put('/:id', function (req, res, next) {
+router.put('/:id', Auth.validateAdmin,function (req, res, next) {
 	let area = req.body.area;
 	Area.findByPk(req.params.id).then(area_ => {
 		if(!area_){
@@ -48,7 +49,7 @@ router.put('/:id', function (req, res, next) {
 	})
 });
 
-router.del('/:id', function (req, res, next) {
+router.del('/:id', Auth.validateAdmin,function (req, res, next) {
 	Area.findByPk(req.params.id).then(area_ => {
 		if(!area_){
 			res.status(404);

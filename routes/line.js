@@ -4,7 +4,7 @@ const Machine = require('../models/Machine')
 const Area = require('../models/Area')
 const Factory = require('../models/Factory')
 const Sparepart = require('../models/Sparepart')
-
+const Auth = require('../authentication');
 
 router.get('/', function (req, res, next) {
 
@@ -33,14 +33,14 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', Auth.validateAdmin, function (req, res, next) {
 	let line = req.body.line;
 	Line.create(line).then(line_ => {
 		res.json(line_);
 	})
 });
 
-router.put('/:id', function (req, res, next) {
+router.put('/:id', Auth.validateAdmin, function (req, res, next) {
 	let line = req.body.line;
 	Line.findByPk(req.params.id).then(line_ => {
 		if(!line_){
@@ -54,7 +54,7 @@ router.put('/:id', function (req, res, next) {
 	})
 });
 
-router.del('/:id', function (req, res, next) {
+router.del('/:id', Auth.validateAdmin, function (req, res, next) {
 	Line.findByPk(req.params.id).then(line_ => {
 		if(!line_){
 			res.status(404);

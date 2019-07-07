@@ -4,7 +4,7 @@ const Area = require('../models/Area')
 const Line = require('../models/Line')
 const Machine = require('../models/Machine')
 const Sparepart = require('../models/Sparepart')
-
+const Auth = require('../authentication');
 
 router.get('/', function (req, res, next) {
 
@@ -32,14 +32,14 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', Auth.validateAdmin, function (req, res, next) {
 	let machine = req.body.machine;
 	Machine.create(machine).then(machine_ => {
 		res.json(machine_);
 	})
 });
 
-router.put('/:id', function (req, res, next) {
+router.put('/:id', Auth.validateAdmin, function (req, res, next) {
 	let machine = req.body.machine;
 	Machine.findByPk(req.params.id).then(machine_ => {
 		if(!machine_){
@@ -53,7 +53,7 @@ router.put('/:id', function (req, res, next) {
 	})
 });
 
-router.del('/:id', function (req, res, next) {
+router.del('/:id', Auth.validateAdmin, function (req, res, next) {
 	Machine.findByPk(req.params.id).then(machine_ => {
 		if(!machine_){
 			res.status(404);
@@ -87,7 +87,7 @@ function ParseCSVFromBase64(base64,cb){
 	})
 }
 
-router.post('/bulk-add/:id', function(req,res,next){
+router.post('/bulk-add/:id', Auth.validateAdmin, function(req,res,next){
 	Machine.findByPk(req.params.id).then(machine_ => {
 		if(!machine_){
 			res.status(404);

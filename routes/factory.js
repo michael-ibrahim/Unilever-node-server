@@ -4,7 +4,7 @@ const Area = require('../models/Area')
 const Line = require('../models/Line')
 const Auth = require('../authentication');
 
-router.get('/',function (req, res, next) {
+router.get('/', function (req, res, next) {
 
 	//where
 	let where_statement = {};
@@ -24,7 +24,7 @@ router.get('/',function (req, res, next) {
 	});
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', Auth.validateAdmin, function (req, res, next) {
 	let factory = req.body.factory;
 	Factory.create(factory).then(factory_ => {
 		res.status(201);
@@ -32,7 +32,7 @@ router.post('/', function (req, res, next) {
 	})
 });
 
-router.put('/:id', function (req, res, next) {
+router.put('/:id', Auth.validateAdmin, function (req, res, next) {
 	let factory = req.body.factory;
 	Factory.findByPk(req.params.id).then(factory_ => {
 		if(!factory_){
@@ -46,7 +46,7 @@ router.put('/:id', function (req, res, next) {
 	})
 });
 
-router.del('/:id', function (req, res, next) {
+router.del('/:id', Auth.validateAdmin, function (req, res, next) {
 	Factory.findByPk(req.params.id).then(factory_ => {
 		if(!factory_){
 			res.status(404);

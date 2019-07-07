@@ -2,7 +2,7 @@ var jwt = require('jsonwebtoken');
 const secret = "Unilever#123456789#";
 
 function validateAdmin(req,res,next){
-	let jwt_ = req.headers.jwt;
+	let jwt_ = req.headers.authorization;
 	if(!jwt_){
 		res.status(401);
 		res.end();
@@ -27,4 +27,4 @@ function getJWT(email){
 }
 
 
-module.exports = { auth, validateAdmin, getJWT};
+module.exports = { validateAdmin, getJWT};

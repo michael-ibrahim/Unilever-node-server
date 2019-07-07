@@ -6,7 +6,7 @@ const Machine = require('../models/Machine')
 const Sparepart = require('../models/Sparepart')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
-
+const Auth = require('../authentication')
 
 router.get('/', function (req, res, next) {
 
@@ -39,7 +39,7 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', Auth.validateAdmin, function (req, res, next) {
 	let sparepart = req.body.sparepart;
 	//Machine.findByPk(sparepart.machineId).then(machine => {
 		Sparepart.create(sparepart).then(sparepart_ => {
@@ -49,7 +49,7 @@ router.post('/', function (req, res, next) {
 //	});
 });
 
-router.put('/:id', function (req, res, next) {
+router.put('/:id', Auth.validateAdmin, function (req, res, next) {
 	let sparepart = req.body.sparepart;
 	Sparepart.findByPk(req.params.id).then(sparepart_ => {
 		if(!sparepart_){
@@ -64,7 +64,7 @@ router.put('/:id', function (req, res, next) {
 	})
 });
 
-router.del('/:id', function (req, res, next) {
+router.del('/:id', Auth.validateAdmin, function (req, res, next) {
 	Sparepart.findByPk(req.params.id).then(sparepart_ => {
 		if(!sparepart_){
 			res.status(404);

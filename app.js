@@ -8,7 +8,8 @@ const fs = require('fs')
 
 const cors = corsMiddleware({
   preflightMaxAge: 5, //Optional
-  origins: ['*']
+  origins: ['*'],
+  allowHeaders: ['authorization']
 })
 
 
