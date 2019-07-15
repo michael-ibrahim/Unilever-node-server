@@ -29,6 +29,7 @@ const machine = require('./routes/machine');
 const sparepart = require('./routes/sparepart');
 const transaction = require('./routes/transaction');
 const auth = require('./routes/auth');
+const admin = require('./routes/admin');
 
 server.use(restify.plugins.throttle({
 	burst: 100,  	// Max 10 concurrent requests (if tokens)
@@ -48,6 +49,7 @@ router.add('/machine', machine);
 router.add('/sparepart', sparepart);
 router.add('/transaction', transaction);
 router.add('/auth', auth);
+router.add('/admin', admin);
 router.applyRoutes(server);
 
 server.on('after', restify.plugins.metrics({ server: server }, function onMetrics(err, metrics) {
