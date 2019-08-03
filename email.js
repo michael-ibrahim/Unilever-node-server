@@ -8,6 +8,7 @@ const Machine = require('./models/Machine')
 const Line = require('./models/Line')
 const Area = require('./models/Area')
 const Factory = require('./models/Factory')
+const Moment = require('moment');
 
 function main(id){
 	prepare_email(id);
@@ -64,35 +65,59 @@ function prepare_email(id){
 	}).then(transaction => {
 		let body = "";
 		body+= `
-		<div style="background-color: #007dbb; color:white; padding: 20px;">
-			<h2><strong>Transaction id</strong>: ${transaction.id}</h2>
-			<h3><strong>User</strong>: ${transaction.user.name}</h3>
-			<p>Time: ${Date(transaction.createdAt).toString()} </p>
-		</div>
-		<div style="background-color: #EEE; padding: 20px;">
-			<h4>Items:</h4>
-			<table style=" border-collapse: collapse; width: 100%;">
-			<tr style="border: 1px solid #CCC; text-align: left;">
-				<th>Amount</th>
-				<th>Spare Part</th>
-				<th>Machine</th>
-				<th>Line</th>
-				<th>Area</th>
-				<th>Factory</th>
-			</tr>`;
-
-				for(let item of transaction.transactionItems){
-					body+= `<tr style="border: 1px solid #CCC;">
-					<td >${item.count}</td>
-					<td>${item.sparepart.name}</td>
-					<td>${item.sparepart.machines[0].name}</td>
-					<td>${item.sparepart.machines[0].line.name}</td>
-					<td>${item.sparepart.machines[0].line.area.name}</td>
-					<td>${item.sparepart.machines[0].line.area.factory.name}</td>
-					</tr>`;
+			<table border="1" style="text-align:center; border-collapse:collapse; width:100%;">
+				<tr>
+		      <th colspan="8">
+		        SPARES ISSUE REQUEST
+		      </th>
+		    </tr>
+		    <tr>
+		      <th colspan="4">Transaction Id:</th>
+		      <td colspan="4">${transaction.id}</td>
+		    </tr>
+		    <tr style="border-top: 3px solid black;">
+		      <th colspan="4">Date</th>
+		      <th colspan="4">Time</th>
+		    </tr>
+		    <tr>
+		      <td colspan="4">${Moment(transaction.createdAt).format('D/M/YYYY')}</td>
+		      <td colspan="4">${Moment(transaction.createdAt).format('LT')}</td> <!-- Cairo Time Zone -->
+		    </tr>
+		    <tr style="border-top: 3px solid black;">
+		      <th>NO</th>
+		      <th>Area</th>
+		      <th>Line</th>
+		      <th>Machine</th>
+		      <th>Material Sap</th>
+		      <th>Part Description</th>
+		      <th>Part Location</th>
+		      <th>Quantity</th>
+		    </tr>
+				`
+				for(let i =0; i < transaction.transactionItems.length; i++){
+					body += `
+						<tr>
+							<td>${i+1}</td>
+							<td>${transaction.transactionItems[i].sparepart.machines[0].line.area.name}</td>
+							<td>${transaction.transactionItems[i].sparepart.machines[0].line.name}</td>
+							<td>${transaction.transactionItems[i].sparepart.machines[0].name}</td>
+							<td>${transaction.transactionItems[i].sparepart.code}</td>
+							<td>${transaction.transactionItems[i].sparepart.name}</td>
+							<td>${transaction.transactionItems[i].sparepart.position}</td>
+							<td>${transaction.transactionItems[i].count}</td>
+						</tr>
+					`
 				}
-		body+=`</table>
-		</div>`
+				body +=`
+		    <tr style="border-top: 3px solid black;">
+		      <th>Technician</th>
+		      <td>${transaction.user.name}</td>
+		      <td colspan="2"></td>
+		      <td colspan="2">Maintenance MGR</td>
+		      <td colspan="2"></td>
+		    </tr>
+		  </table>
+		`
 		send_email("Unilever Warehousing Transaction", body);
 	});
 }
