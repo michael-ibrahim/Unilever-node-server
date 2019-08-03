@@ -87,30 +87,46 @@ function ParseCSVFromBase64(base64,cb){
 	})
 }
 
-router.post('/bulk-add/:id', Auth.validateAdmin, function(req,res,next){
-	Machine.findByPk(req.params.id).then(machine_ => {
-		if(!machine_){
+router.post('/bulk-add/', Auth.validateAdmin, function(req,res,next){
+
+
+	Machine.findAll({ where: { id: req.body.machines } }).then(machines_ => {
+		if(!machines_){
 			res.status(404);
 			res.end();
 			return;
 		}
 
 		else{
+
 			let fileBase64 = req.body.file.split(',').pop();
 			ParseCSVFromBase64(fileBase64,(spareparts)=>{
 
+				//Saving codes for inside bulk create.. As Bulk Create does not return results. So you have to manually query again
+				let codes =[];
+				for(let s of spareparts){
+					codes.push(s.code);
+				}
+
 				// Adding Spareparts to the database
-				Sparepart.bulkCreate(spareparts, { individualHooks: true }).then(spareparts_ => {
+				Sparepart.bulkCreate(spareparts, {
+					updateOnDuplicate: ["code","name","position"]
+				}).then( ()=> {
 
-					// Associating the Spareparts with the provided machine
-					for(let sparepart_ of spareparts_){
-						sparepart_.addMachine(machine_.id);
-					}
+					//Bulk Create does not return results. So you have to manually query again, using the codes array.
+					Sparepart.findAll({ where: { code:codes } }).then(spareparts_ => {
 
-					res.status(200);
-					res.end();
+						// Associating the Spareparts with the provided machine
+						for(let sparepart_ of spareparts_){
+							sparepart_.addMachines(machines_);
+						}
+
+						res.status(200);
+						res.end();
+					})
 				}, err=> {
 
+					console.log(err);
 					//Handling Different Errors
 					let errorMsg;
 					switch(err.errors[0].type){

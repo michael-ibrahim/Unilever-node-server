@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
 
 	Sparepart.findAll({
 		where: where_statement,
-		limit: 250,			//limit So things dont get crazy
+		limit: 100,			//limit So things dont get crazy
 		include: [{
 			model: Machine, attributes: ['id','name'], include: {
 				model: Line, attributes: ['id','name'], include: {

@@ -26,7 +26,8 @@ const Sparepart = sequelize.define('sparepart', {
 	},
 	code:{
 		type: Sequelize.STRING,
-		allowNull: true
+		allowNull: true,
+		unique: true
 	}
 });
 
